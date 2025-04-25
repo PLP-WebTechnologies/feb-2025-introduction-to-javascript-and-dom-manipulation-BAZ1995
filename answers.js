@@ -1,24 +1,24 @@
-// Change the text content
-document.getElementById('change-text-btn').addEventListener('click', function () {
-  const title = document.getElementById('main-title');
-  title.textContent = 'You changed the title!';
-});
+function changeText() {
+  document.getElementById("dynamic-text").textContent = "The text has been changed!";
+}
 
-// Modify CSS styles
-document.getElementById('change-style-btn').addEventListener('click', function () {
-  const desc = document.getElementById('description');
-  desc.style.color = 'white';
-  desc.style.backgroundColor = 'teal';
-  desc.style.padding = '10px';
-  desc.style.borderRadius = '5px';
-});
+function changeStyle() {
+  const styleText = document.getElementById("style-text");
+  styleText.style.color = "white";
+  styleText.style.backgroundColor = "purple";
+  styleText.style.padding = "10px";
+}
 
-// Add/remove an element (toggle box)
-document.getElementById('toggle-element-btn').addEventListener('click', function () {
-  const box = document.getElementById('box');
-  if (box.style.display === 'none') {
-    box.style.display = 'block';
-  } else {
-    box.style.display = 'none';
+function addItem() {
+  const ul = document.getElementById("item-list");
+  const newItem = document.createElement("li");
+  newItem.textContent = `Item ${ul.children.length + 1}`;
+  ul.appendChild(newItem);
+}
+
+function removeItem() {
+  const ul = document.getElementById("item-list");
+  if (ul.lastElementChild) {
+    ul.removeChild(ul.lastElementChild);
   }
-});
+}
